@@ -23,3 +23,35 @@ A aplicação seguirá o padrão **MVC (Model-View-Controller)** dentro de uma *
 
 ---
 *Documento elaborado como proposta inicial para a disciplina de Programação WEB.*
+
+
+## 🏗️ Arquitetura e Modelagem
+
+O projeto segue o padrão **MVC (Model-View-Controller)** dentro de uma arquitetura monolítica. 
+
+### Modelo de Dados: Entidade `Tarefa`
+
+| Atributo | Tipo | Descrição |
+| :--- | :--- | :--- |
+| `id` | Long | Chave Primária, Autoincremento. |
+| `titulo` | String | Obrigatório. Título ou resumo da tarefa. |
+| `descricao` | String | Opcional. Detalhes adicionais. |
+| `dataCriacao` | LocalDate | Gerado automaticamente pelo sistema. |
+| `dataVencimento` | LocalDate | Opcional. Prazo limite da tarefa. |
+| `status` | Enum | `PENDENTE` ou `CONCLUIDA`. |
+
+## 📋 Requisitos do Sistema
+
+**Requisitos Funcionais:**
+* **RF01:** Cadastrar nova tarefa (título, descrição, data de vencimento). Status inicial: "Pendente".
+* **RF02:** Listar todas as tarefas cadastradas na tela principal.
+* **RF03:** Editar dados de uma tarefa existente.
+* **RF04:** Excluir permanentemente uma tarefa.
+* **RF05:** Alternar o status da tarefa ("Pendente" <-> "Concluída").
+* **RF06:** Filtrar tarefas por status (Todas, Pendentes, Concluídas).
+
+**Requisitos Não Funcionais:**
+* **RNF01:** Back-end em Java com Spring Boot.
+* **RNF02:** Padrão arquitetural MVC.
+* **RNF03:** Front-end renderizado com Thymeleaf.
+* **RNF04:** Persistência usando banco H2 e Spring Data JPA.
